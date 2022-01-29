@@ -28,8 +28,6 @@ class UsersController extends Controller
         ]);
 
         if ($validator->fails()){
-
-
             $respuesta['status'] = 0;
             $respuesta['msg'] = $validator->errors();
           

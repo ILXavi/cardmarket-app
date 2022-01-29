@@ -18,8 +18,6 @@ class CreateCollectionsTable extends Migration
             $table->string('name');
             $table->string('symbol');
             $table->date('launch_date');
-            //$table->unsignedBigInteger('collection_id');
-            //$table->foreign('collection_id')->references('id')->on('collections');
             $table->timestamps();
         });
     }

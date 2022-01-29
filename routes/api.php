@@ -20,15 +20,17 @@ Route::middleware(['apitoken','permission'])->prefix('cards')->group(function(){
     Route::put('/registerCard',[CardsController::class,'registerCard']);
     Route::put('/registerCollection',[CardsController::class,'registerCollection']);
     
-    // Route::put('/registerUser',[UsersController::class,'registerUser']);
-    // Route::put('/listEmployees',[UsersController::class,'listEmployees']);
-    // Route::post('/employeeDetail',[UsersController::class,'employeeDetail']);
-    // Route::post('/profile',[UsersController::class,'profile'])->withoutMiddleware('permission');
-    // Route::put('/editProfile',[UsersController::class,'editProfile']);
-        
+});
+Route::middleware(['apitoken','salespermission'])->prefix('cards')->group(function(){
+
+    Route::put('/putOnSale',[CardsController::class,'putOnSale']);
+   
 });
 
 Route::post('/login',[UsersController::class,'login']);
+Route::post('/cardSearcher',[CardsController::class,'cardSearcher']);
+Route::post('/cardsOnSale',[CardsController::class,'cardsOnSale']);
+       
 
 Route::prefix('users')->group(function(){
 

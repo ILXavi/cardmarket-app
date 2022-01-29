@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Collection extends Model
+class LotOnSale extends Model
 {
     use HasFactory;
-    public function cards()
-    {
-        return $this->belongsToMany(Card::class);
-    }
+    protected $table = 'cards_sale';
 }

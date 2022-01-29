@@ -19,6 +19,8 @@ class CreateCardsSaleTable extends Migration
             $table->foreign('card_id')->references('id')->on('cards_collections');
             $table->integer('quantity');
             $table->float('total_price');
+            $table->unsignedBigInteger('seller_id');
+            $table->foreign('seller_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
