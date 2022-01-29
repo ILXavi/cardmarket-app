@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('role', ['Particular', 'Profesional', 'Administrador']);
             //$table->rememberToken();
+            $table->string('api_token')->nullable()->unique();
             $table->timestamps();
         });
     }
