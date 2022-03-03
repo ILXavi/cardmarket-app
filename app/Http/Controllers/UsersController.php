@@ -28,7 +28,7 @@ class UsersController extends Controller
         ]);
 
         if ($validator->fails()){
-            $respuesta['status'] = 0;
+            $respuesta['status'] = 3;
             $respuesta['msg'] = $validator->errors();
           
         } else{
@@ -45,6 +45,7 @@ class UsersController extends Controller
            
             try{
                 $user->save();
+                $respuesta['status'] = 1;
                 $respuesta['msg'] = "Usuario guardado con id ".$user->id;
                                
             }catch(\Exception $e){
